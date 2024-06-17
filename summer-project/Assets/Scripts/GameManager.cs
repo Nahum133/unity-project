@@ -46,4 +46,14 @@ public class GameManager : MonoBehaviour
   {
        victoryTextObject.SetActive(true);
   }
+
+  public void GameOver() // A function that is called whenever the player loses the game
+  {
+      Debug.Log("Wasted");
+      Invoke("LoadCurrentLevel", 2f);
+  }
+  private void LoadCurrentLevel()
+  {
+      SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex));
+  }
 }
